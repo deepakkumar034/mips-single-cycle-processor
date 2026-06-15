@@ -18,3 +18,8 @@ Referring to the figure below. I have written the RTL Verilog files for all subm
 
 <img width="1203" height="651" alt="image" src="https://github.com/user-attachments/assets/96d374ec-d1f2-42da-820a-3e6ba3738b8f" />
 
+## Top Module View:
+The processor is composed of a datapath and a controller. The controller is internally composed of the main decoder and the ALU decoder. The two figures below show a block diagram of the single-cycle MIPS processor interfaced to external memories 
+
+<img width="864" height="764" alt="image" src="https://github.com/user-attachments/assets/222b2365-2292-43f3-a9c0-2cf71fccc774" />
+
