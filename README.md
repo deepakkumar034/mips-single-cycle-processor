@@ -16,4 +16,5 @@ The implementation supports standard instructions from the MIPS ISA, including:
 ## Architecture and Data Path
 Referring to the figure below. I have written the RTL Verilog files for all submodules of the MIPS processor (e.g. Program Counter (PC), Instruction Memory, Register File, ALU, Data Memory, and the necessary Control Unit and Sign Extender logic.). Then, implemented the top module.
 
+<img width="1203" height="651" alt="image" src="https://github.com/user-attachments/assets/96d374ec-d1f2-42da-820a-3e6ba3738b8f" />
 
