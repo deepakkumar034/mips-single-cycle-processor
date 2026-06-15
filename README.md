@@ -11,7 +11,7 @@ The CPU implements the core MIPS instruction set, covering R-type, I-type, and J
 The implementation supports standard instructions from the MIPS ISA, including:
 - R-type (Register): add, sub, and, or, slt, xor, xnor — opcode + rs + rt + rd + shamt + funct
 
-- I-type (Immediate): addi, andi, ori, slti, lw, sw, beq, bne, lui — opcode + rs + rt + immediate
+- I-type (Immediate): addi, lw, sw, slt, beq, bne — opcode + rs + rt + immediate
 
 - J-type (Jump): j — opcode + address
 
