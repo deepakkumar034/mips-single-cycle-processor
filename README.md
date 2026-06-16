@@ -76,4 +76,9 @@ $ netlistsvg netlist.json -o schematic.svg
 - **Yosys** — for RTL synthesis and schematic generation
 - **netlistsvg** — to render RTL schematics as SVG
 
+## References
+
+- Computer Organization and Design (Patterson & Hennessy) — MIPS ISA Reference
+- MIPS32 Architecture for Programmers, Volume II: The MIPS32 Instruction Set
+
 
