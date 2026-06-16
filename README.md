@@ -78,7 +78,7 @@ $ netlistsvg netlist.json -o schematic.svg
 
 ## References
 
-- Computer Organization and Design (Patterson & Hennessy) — MIPS ISA Reference
-- MIPS32 Architecture for Programmers, Volume II: The MIPS32 Instruction Set
+1. Harris, D. & Harris, S. — *Digital Design and Computer Architecture* — MIPS ISA Reference
+2. MIPS32 Architecture for Programmers, Volume II: The MIPS32 Instruction Set
 
 
