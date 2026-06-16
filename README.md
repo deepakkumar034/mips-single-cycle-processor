@@ -26,3 +26,50 @@ The processor is composed of a datapath and a controller. The controller is inte
 
 <img width="864" height="764" alt="image" src="https://github.com/user-attachments/assets/222b2365-2292-43f3-a9c0-2cf71fccc774" />
 
+## Implementation Details
+The CPU is entirely modeled in Verilog HDL using a modular approach. Each major component is implemented as a separate module for clarity and ease of testing.
+
+Key modules include:
+* Control Unit: Decodes the instruction opcode/funct fields and generates all necessary control signals for the data path components.
+* Register File: Stores and retrieves the 32 general-purpose registers (R0 through R31).
+* ALU (Arithmetic Logic Unit): Performs all arithmetic and logical operations required by the instruction set, controlled by ALU control.
+* Sign/Zero Extender: Logic to correctly extend the 16-bit immediate field to 32 bits for I-type instructions.
+* PC + Adder/Mux Logic: Calculates the next PC value, handling sequential execution, branches, and jumps.
+
+## Tools and Verification
+
+### Simulation and Module Verification
+**Icarus Verilog** was used for the entire simulation process.
+
+- Each core module (ALU, Register File, Control Unit) was individually verified 
+  using dedicated testbenches to ensure functional correctness. There are dedicated 
+  shell scripts in the testbench/ directory which can be run using:
+
+$ ./<shell_script_file_name>.sh
+
+- A top-level testbench was created to load instruction sequences into the 
+  Instruction Memory and simulate the complete CPU operation. This can be 
+  compiled and simulated by running the run.sh file.
+
+$ ./run.sh
+
+- Waveforms were viewed and analyzed using **GTKWave**.
+
+### RTL Schematic Generation
+**Yosys** was used for RTL synthesis and schematic generation:
+
+- RTL Linting: Performed static analysis using Yosys to ensure correct synthesis.
+- RTL Schematic Generation: Generated the logical view of the hardware design 
+  using **netlistsvg**, confirming the interconnection of the modules.
+
+$ yosys -p "read_verilog top.v; hierarchy -top top; proc; opt; write_json netlist.json"
+$ netlistsvg netlist.json -o schematic.svg
+
+## Requirements
+
+- **Icarus Verilog** — to compile and simulate the RTL code
+- **GTKWave** — to view simulation waveforms
+- **Yosys** — for RTL synthesis and schematic generation
+- **netlistsvg** — to render RTL schematics as SVG
+
+
