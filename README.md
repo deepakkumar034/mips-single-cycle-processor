@@ -57,7 +57,7 @@ $ ./<shell_script_file_name>.sh
 $ ./run.sh
 ```
 
-- Waveforms were viewed and analyzed using **GTKWave**.
+- Waveforms were viewed and analyzed using **Surfer**.
 
 ### RTL Schematic Generation
 **Yosys** was used for RTL synthesis and schematic generation:
@@ -72,7 +72,7 @@ $ netlistsvg netlist.json -o schematic.svg
 ## Requirements
 
 - **Icarus Verilog** — to compile and simulate the RTL code
-- **GTKWave** — to view simulation waveforms
+- **Surfer** — to view simulation waveforms
 - **Yosys** — for RTL synthesis and schematic generation
 - **netlistsvg** — to render RTL schematics as SVG
 
