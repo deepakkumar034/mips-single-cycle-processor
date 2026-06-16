@@ -45,13 +45,13 @@ Key modules include:
   using dedicated testbenches to ensure functional correctness. There are dedicated 
   shell scripts in the testbench/ directory which can be run using:
 
-$ ./<shell_script_file_name>.sh
+``` bash $ ./<shell_script_file_name>.sh```
 
 - A top-level testbench was created to load instruction sequences into the 
   Instruction Memory and simulate the complete CPU operation. This can be 
   compiled and simulated by running the run.sh file.
 
-$ ./run.sh
+``` bash $ ./run.sh```
 
 - Waveforms were viewed and analyzed using **GTKWave**.
 
