@@ -41,9 +41,9 @@ Key modules include:
 ### Simulation and Module Verification
 **Icarus Verilog** was used for the entire simulation process.
 
-### Compile and simulate  ``` bash
-iverilog -o mips_tb *.v
-vvp mips.out
+### Compile and simulate
+``` bash 
+iverilog -o mips_tb *.v  vvp mips.out
 ```
 
 ### View waveforms
