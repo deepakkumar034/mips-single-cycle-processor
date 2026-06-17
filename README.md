@@ -10,11 +10,15 @@ The CPU implements the core MIPS instruction set, covering R-type, I-type, and J
 
 ### Supported Instructions
 The implementation supports standard instructions from the MIPS ISA, including:
+``` bash
 - R-type (Register): add, sub, and, or, slt, xor, xnor — opcode + rs + rt + rd + shamt + funct
-
+```
+``` bash
 - I-type (Immediate): addi, lw, sw, slt, beq, bne — opcode + rs + rt + immediate
-
+```
+``` bash
 - J-type (Jump): j — opcode + address
+```
 
 ## Architecture and Data Path
 Referring to the figure below. I have written the RTL Verilog files for all submodules of the MIPS processor (e.g. Program Counter (PC), Instruction Memory, Register File, ALU, Data Memory, and the necessary Control Unit and Sign Extender logic.). Then, implemented the top module.
