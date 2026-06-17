@@ -43,23 +43,24 @@ Key modules include:
 
 ### Compile and simulate
 ``` bash
-iverilog -g2001 -o mips.out \
-top_tb-v top-v mips.v \
-control.v maindec.v aludec.v datapath.v \
-alu.v regfile.v \
-signext.v sl2.v adder.v mux.v \
-imem.v dmem.v
+iverilog -g2001 -o mips.out \ top_tb-v top-v mips.v \ control.v maindec.v aludec.v datapath.v \ alu.v regfile.v \ signext.v sl2.v adder.v mux.v \ imem.v dmem.v
 vvp mips.out
 ```
 
 ### View waveforms
+``` bash
 surfer mips_full.vcd
+```
 
 ### Generate synthesized netlist
-yosys -p "read_verilog *.v; synth; write_json mips.json"
+``` bash
+yosys -p "read_verilog .v; synth; write_json mips.json"
+```
 
 ### Generate RTL schematic
+```bash
 netlistsvg mips.json -o mips.svg
+```
 
 ## Requirements
 
