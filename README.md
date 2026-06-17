@@ -41,21 +41,17 @@ Key modules include:
 ### Simulation and Module Verification
 **Icarus Verilog** was used for the entire simulation process.
 
-- Each core module (ALU, Register File, Control Unit) was individually verified 
-  using dedicated testbenches to ensure functional correctness. There are dedicated 
-  shell scripts in the testbench/ directory which can be run using:
-
-# Compile and simulate
+### Compile and simulate
 iverilog -o mips_tb *.v
 vvp mips.out
 
-# View waveforms
+### View waveforms
 surfer mips_full.vcd
 
-# Generate synthesized netlist
+### Generate synthesized netlist
 yosys -p "read_verilog *.v; synth; write_json mips.json"
 
-# Generate RTL schematic
+### Generate RTL schematic
 netlistsvg mips.json -o mips.svg
 
 ## Requirements
