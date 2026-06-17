@@ -45,29 +45,18 @@ Key modules include:
   using dedicated testbenches to ensure functional correctness. There are dedicated 
   shell scripts in the testbench/ directory which can be run using:
 
-```bash
-$ ./<shell_script_file_name>.sh
-```
+# Compile and simulate
+iverilog -o mips_tb *.v
+vvp mips.out
 
-- A top-level testbench was created to load instruction sequences into the 
-  Instruction Memory and simulate the complete CPU operation. This can be 
-  compiled and simulated by running the run.sh file.
+# View waveforms
+surfer mips_full.vcd
 
-```bash 
-$ ./run.sh
-```
+# Generate synthesized netlist
+yosys -p "read_verilog *.v; synth; write_json mips.json"
 
-- Waveforms were viewed and analyzed using **Surfer**.
-
-### RTL Schematic Generation
-**Yosys** was used for RTL synthesis and schematic generation:
-
-- RTL Linting: Performed static analysis using Yosys to ensure correct synthesis.
-- RTL Schematic Generation: Generated the logical view of the hardware design 
-  using **netlistsvg**, confirming the interconnection of the modules.
-
-$ yosys -p "read_verilog top.v; hierarchy -top top; proc; opt; write_json netlist.json"
-$ netlistsvg netlist.json -o schematic.svg
+# Generate RTL schematic
+netlistsvg mips.json -o mips.svg
 
 ## Requirements
 
