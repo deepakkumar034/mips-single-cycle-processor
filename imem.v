@@ -31,10 +31,9 @@ module imem(
         RAM[7]  = 32'hAC140004;
         // lw   $s5, 4($0)         # $s5 = Mem[4]
         RAM[8] = 32'h8C150004;
+        // beq $0, $0, -10   (always taken, loops back to PC=0x00)
+        RAM[9]  = 32'h1000FFF6;    
         
-        // Fill rest with NOPs
-        // nop
-        RAM[9] = 32'h00000000;
     end
 
     assign rd = RAM[a[31:2]]; // PC is byte-addressed, RAM is word-addressed
